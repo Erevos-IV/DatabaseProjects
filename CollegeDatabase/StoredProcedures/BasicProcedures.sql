@@ -56,18 +56,4 @@ DELIMITER ;
 
 CALL GetEMployeesPerOffice('Sales');
 
--- Getting Payments for a specific Student.
 
-DELIMITER //
-CREATE PROCEDURE GetStudentPayments(IN StudentName VARCHAR(50), IN StudentLastName VARCHAR(50))
-	BEGIN
-    SELECT pay.PaymentID, CONCAT(stu.FirstName,' ',stu.LastName ) AS FullName, pay.PaymentDate, payt.Title AS PaymentType
-    FROM Payments AS pay
-    INNER JOIN Students AS stu USING(StudentID)
-    INNER JOIN paymenttypes AS payt USING(PaymentTypeID)
-    WHERE stu.FirstName = StudentName
-    AND stu.LastName = StudentLastName;
-	END //
-DELIMITER ;
-
-CALL GetStudentPayments('Bill', 'Goysetis');
