@@ -16,7 +16,5 @@ CREATE PROCEDURE StudentExams (IN StuFName VARCHAR(50), IN StuLName VARCHAR(50))
 	END //
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS StudentExams;
-
 -- Calling the procedure.
 CALL StudentExams("Bill", "Goysetis");
