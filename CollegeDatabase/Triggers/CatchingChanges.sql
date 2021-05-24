@@ -33,6 +33,7 @@ FOR EACH ROW
 	END //
 DELIMITER ;
 
+
 -- Creating the table to store any changes from payment table.
 CREATE TABLE PaymentChanges(
 	user VARCHAR(80),
