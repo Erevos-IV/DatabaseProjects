@@ -1,7 +1,7 @@
 -- Using Hospital database.
 USE hospital;
 
--- Creating index in AMKA (which is a unique series of numbers owning by people after 16 years old)
+-- Creating index in AMKA (which is a unique series of numbers owning by people after being 1? year old)
 CREATE UNIQUE INDEX Patients_AMKA_idx
 ON patients(AMKA);
 
