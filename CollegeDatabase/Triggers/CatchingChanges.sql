@@ -18,7 +18,7 @@ FOR EACH ROW
 		DECLARE changes VARCHAR(200);
         
         SET changes = CONCAT(NEW.EmployeeID,', ',
-							 NEW.FirstName,', ',
+			     NEW.FirstName,', ',
                              NEW.LastName,', ',
                              NEW.Phone,', ',
                              NEW.Email,', ',
@@ -51,7 +51,7 @@ FOR EACH ROW
 		DECLARE changes VARCHAR(200);
         
         SET changes = CONCAT(NEW.PaymentID,', ',
-							 NEW.StudentID,', ',
+			     NEW.StudentID,', ',
                              NEW.PaymentDate,', ',
                              NEW.TotalAmount,', ',
                              NEW.PaymentTypeID);
