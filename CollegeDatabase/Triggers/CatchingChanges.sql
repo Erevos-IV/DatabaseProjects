@@ -3,7 +3,7 @@ USE college;
 
 -- Creating a table to catch the updates.
 CREATE TABLE EmployeeChanges(
-	user VARCHAR(80),
+    user VARCHAR(80),
     action VARCHAR(20),
     changes VARCHAR(200),
     stamp  TIMESTAMP
@@ -15,7 +15,7 @@ CREATE TRIGGER EmployeeTriggerToCatchChanges
 AFTER INSERT ON employees
 FOR EACH ROW
 	BEGIN
-		DECLARE changes VARCHAR(200);
+	DECLARE changes VARCHAR(200);
         
         SET changes = CONCAT(NEW.EmployeeID,', ',
 			     NEW.FirstName,', ',
@@ -28,7 +28,7 @@ FOR EACH ROW
                              NEW.ReportsTo,', ',
                              NEW.OfficeID,', ');
                              
-		INSERT INTO employeeChanges
+	INSERT INTO employeeChanges
         VALUES (CURRENT_USER(), 'INSERT', changes, CURRENT_TIMESTAMP());
 	END //
 DELIMITER ;
@@ -48,7 +48,7 @@ CREATE TRIGGER PaymentsTriggerToCatchChanges
 AFTER INSERT ON payments
 FOR EACH ROW
 	BEGIN
-		DECLARE changes VARCHAR(200);
+	DECLARE changes VARCHAR(200);
         
         SET changes = CONCAT(NEW.PaymentID,', ',
 			     NEW.StudentID,', ',
@@ -56,7 +56,7 @@ FOR EACH ROW
                              NEW.TotalAmount,', ',
                              NEW.PaymentTypeID);
                           
-		INSERT INTO paymentchanges
+	INSERT INTO paymentchanges
         VALUES (CURRENT_USER(), 'INSERT', changes, CURRENT_TIMESTAMP());
 	END //
 DELIMITER ;
